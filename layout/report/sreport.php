@@ -24,7 +24,6 @@ while($row = mysql_fetch_array($run))
 	$column_name = $column_name.$f." ".$l."\n";
 $column_sig = $column_sig.$sig."______________________\n";
 
-$totallate=$row['lateno'];
 }
 
 $query2=mysql_query("SELECT sum(salaryaday) as total_gross from logs INNER JOIN information where logs.emp_id=information.emp_id and logs.tag='0' and logs.stat1='0' and logs.dt between '$d1' AND '$d2' Group By logs.emp_id ORDER by information.fname ASC");
@@ -48,7 +47,6 @@ $column_net= $column_net.$tt."______________\n";
 }
 
 
-mysql_close();
 
 $pdf=new FPDF();
 $pdf->AddPage();
@@ -62,11 +60,6 @@ $Y_Fields_Name_position = 20;
 //Table position, under Fields Name
 $Y_Table_Position =30;
 //Second Table Teacher Name
-//Fourth Table Term
-$Y_Fields_Name_positionsss = 38;
-$Y_Table_Positionsss = 38;
-
-//First create each Field Name
 //Gray color filling each Field Name box
 $pdf->SetFillColor(232,232,232);
 //Bold Font for Field Name
@@ -100,8 +93,8 @@ $pdf->Cell(30,10,'Net',1,0,'L',1);
 $pdf->SetX(170);	
 	
 	
-$pdf->Cell(35,10,'SIGNATURE',1,0,'L',1);
-$pdf->SetX(235);
+$pdf->Cell(30,10,'SIGNATURE',1,0,'L',1);
+$pdf->SetX(0);
 
 
 
@@ -149,7 +142,7 @@ $pdf->SetX(170);
 
 $pdf->MultiCell(35,8, $column_sig,1);
 $pdf->SetY($Y_Table_Position);	
-$pdf->SetX(100);
+$pdf->SetX(0);
 
 
 
@@ -165,6 +158,9 @@ while ($i < $number_of_result)
 
 }
 $pdf->Output();
+$pdf = new FPDF();
+$pdf->AddPage();
 
+mysql_close();
 ?>
 

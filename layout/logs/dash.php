@@ -73,25 +73,20 @@ body {margin-top:20px;
 	font-size:13px;
 }
 a{
-	color:green;
-	font-weight: bold;
+	color: green;
 	text-decoration: none;
-	border:none;
 	padding: 10px;
-	margin: none;
 }
-a:hover
-{
+a:hover{
 	color:red;
 }
-
 </style><body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
- <h1>WEB MASTER LIST</h1>
- <div class="div">
- <a href="campaign.php" target="wm">CAMPAIGN</a>  <a href="position.php" target="wm">POSITION</a>
- <a href="suplist.php" target="wm">SUPERVISORS</a>
- <a href="admin.php" target="wm">ADMIN</a>
-	</div><hr> 
-	<iframe src="campaign.php" height="100%" name="wm" width="100%"></iframe>
+ <h1>ACTIVITY LOG</h1>
+ <a href="actlogin.php" target="wm">LOG IN</a> 
+ <a href="actlogout.php" target="wm">LOG OUT</a>
+ <a href="Activity.php" target="wm">ACTIVITY</a>
+ <a href="admin.php" target="wm">RECENTLY</a>
+	<hr> 
+	<iframe src="Activity.php" height="100%" name="wm" width="100%"></iframe>
  </body>

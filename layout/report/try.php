@@ -1,11 +1,8 @@
-<div>jamjamjam</div>
 <?php
 include("../codes/link.php");
-$output = '<div>';
 
-header("Content-Type: application/csv");
-          header("Content-Disposition:attachment; filename=download.csv");
-          echo $output;
- 
+sanskjahkjshajkshkjah
+header('Content-Type: text/csv; charset = utf-8');
+header('Content-Disposition: attachment; filename =data.csv');
 
 ?>

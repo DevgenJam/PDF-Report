@@ -331,4 +331,121 @@ while ($row=mysql_fetch_array($sql))
 	}
 	}
 }
+
+
+
+
+if(isset($_POST['tcs']))
+{
+	$sql=mysql_query("SELECT * FROM information where emp_id='$id'");
+	if(mysql_num_rows($sql)==0)
+	{
+		echo "<script>alert('EMPLOYEE ID NUMBER NOT FOUND')</script>";
+	}
+	else
+	{
+			$sql4=mysql_query("SELECT * FROM specialForm where emp_id='$id' and dt='$date' and statuss='SPECIAL SHIFT'");
+					if(mysql_num_rows($sql4)==1)
+					{
+				echo '<script>alert("YOU ARE ALREADY LOG IN FOR TODAY")</script>';
+					}
+					else//sql4
+					{
+			
+$inser=mysql_query("INSERT into specialForm(emp_id,dt,time_in,statuss,sup,reason,tag)VALUES('$id','$date','$time','SPECIAL SHIFT','$sup','$reason','1')");
+		
+			$ud=mysql_query("UPDATE information set status='1' where emp_id='$id'");
+		$sql=mysql_query("SELECT * FROM information where emp_id='$id'");
+while ($row=mysql_fetch_array($sql)) 
+{
+	$l=$row['lname'];
+	$f=$row['fname'];
+	$m=$row['mname'];
+	$campaign=$row['campaign'];
+	$pos=$row['position'];
+	$re='LOG OUT';
+
+						//echo "<script>alert('YOU ARE NOW LOG OUT')</script>";
+}						echo "<label>ID number : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'> $id<br></span>
+						<label>Name : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$f $m $l<br></span>
+						<label>Campaign : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$campaign<br></span>
+						<label>Position : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$pos<br></span>
+						 <label>Remarks : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$re <br></span>";
+
+			//	echo '<script>alert("TODAY IS YOUR REST DAY, IF YOU WANT TO PROCEED USE THE APPLY FORM FOR REST DAY")</script>';
+			
+			}				
+		
+	}
+}
+
+if(isset($_POST['tcs1']))
+{
+	$sql=mysql_query("SELECT * FROM information where emp_id = '$id'");
+	if(mysql_num_rows($sql)==0)
+	{
+	echo "<script>alert('$id : ID NUMBER NOT FOUND')</script>";
+	}
+	else
+	{
+		$sql2=mysql_query("SELECT * FROM information where emp_id = '$id' and status = '1'");
+		if(mysql_num_rows($sql2)==0)
+		{
+			echo "<script>alert('LOG IN FIRST')</script>";
+		}
+		else
+		{
+			$sql3=mysql_query("SELECT * FROM information INNER JOIN logs where information.emp_id='$id' and information.emp_id=logs.emp_id and logs.tag!='0'");
+			while($row=mysql_fetch_array($sql3))
+			{
+				//take all the data from database with specific id number
+				$id1=$row['emp_id'];
+				$st=$row['sched_in'];
+				$et=$row['sched_out'];
+				$rate=$row['rate'];
+				$tw=$row['other_time'];
+			
+				$r1=$tw+8;//$mustout=$row['must_out'];
+
+				$could=strtotime("+ 480 minutes", strtotime($st));
+				$could_out=date('H:i', $could);
+
+$must=strtotime("+ 540 minutes", strtotime($st));
+				$must_out=date('H:i', $must);
+				
+				$could1=strtotime("+ 540 minutes", strtotime($st));
+				$could_out1=date('H:i', $could1);
+
+				$rp=$rate*$r;
+				$rpd=$rate*$r1;	
+
+			}//end while
+	
+				
+
+						$ud=mysql_query("UPDATE information set status='0' where emp_id='$id'");
+						$ud2=mysql_query("UPDATE specialForm set time_out='$time', total_work='8', salaryaday='$rpd', remarks='LOG OUT', tag='0' where emp_id='$id' and tag='1'");
+					//		echo "<script>alert('YOU ARE NOW LOG OUT')</script>";
+									$sql=mysql_query("SELECT * FROM information where emp_id='$id'");
+while ($row=mysql_fetch_array($sql)) 
+{
+	$l=$row['lname'];
+	$f=$row['fname'];
+	$m=$row['mname'];
+	$campaign=$row['campaign'];
+	$pos=$row['position'];
+	$re='LOG OUT';
+
+						//echo "<script>alert('YOU ARE NOW LOG OUT')</script>";
+}						echo "<label>ID number : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'> $id<br></span>
+						<label>Name : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$f $m $l<br></span>
+						<label>Campaign : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$campaign<br></span>
+						<label>Position : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$pos<br></span>
+						 <label>Remarks : </label><br><span style='color: white; margin-left:30px;  font-size:18px;'>$re <br></span>";
+
+				
+		}
+	}
+	
+}
 ?>

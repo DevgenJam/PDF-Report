@@ -25,7 +25,7 @@ if(!isset($_SESSION['login_user'])){
 			<a href = "prof.php" target="main"><li class = "active" id = "choices" >Profiling</li></a>
 			<a href = "list.php" target="main"><li id = "choices">Employee List</li></a>
 			<a href = "pending.php" target="main"><li id = "choices">Pending</li></a>
-			<a href = "act.php" target="main"><li id = "choices">Activity Log</li></a>
+			<a href = "logs/dash.php" target="main"><li id = "choices">Activity Log</li></a>
 			<a href = "manage/dash.php" target="main"><li id = "choices">Manage</li></a>
 			<a href = "report/index.php" target="main"><li id = "choices">REPORT</li></a>
 			<a href = "out.php"><li id = "choices">Log Out</li></a>

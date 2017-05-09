@@ -109,7 +109,8 @@ label{
       <th width="10%" class="font" >Deductions</th>
       <th width="7%" class="font">Gross Salary </th>
       <th width="7%" class="font">Net Salary </th>
-      <th width=15%" class="font">Remarks</th>
+      <th width="15%" class="font">Remarks</th>
+      <th width="15%" class="font">Action</th>
     </tr>
  </thead>
   <tbody>
@@ -155,6 +156,7 @@ while($roww=mysql_fetch_array($sqll))
       <td align="center" class="fon" ><?php echo $sal; ?></td>
       <td align="center" class="fon"  style="color:red; font-weight:bold;"> <?php echo $net; ?></td>
 	   <td align="center" class="fon" id="countit"><?php echo $row['remarks'];?> || <?php echo $row['statuss']; ?></td>
+	    <td align="center" class="fon" id="countit"><a href="updateLogin.php?id=<?php echo $row['id'];?>">UPDATE</a></td>
 	   </tr>
 	 
 <?php } }  ?>

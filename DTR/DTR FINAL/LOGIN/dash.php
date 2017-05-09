@@ -41,7 +41,7 @@ include("../codes/out-codes.php")
 	<img src="../img/c-black.jpg">
 	<div id="bottom">
 	<p>Applying for Overtime, Early In, Early Out Requires Supervisor or System Admin's approval with in 48 hours  else it will not be counted in your salary. Thank You!</p>
-	<br>
+
 	<label>APPLY FOR:</label>
 	<ul>
 		<a onClick="document.getElementById('earlyin').style.display='block' "><li>EARLY IN</li></a>
@@ -49,6 +49,7 @@ include("../codes/out-codes.php")
 		<a onClick="document.getElementById('ot').style.display='block'"><li>OVERTIME</li></a>
 		<a onClick="document.getElementById('rd').style.display='block'"><li>REST DAY DUTY</li></a>
 		<a onClick="document.getElementById('ds').style.display='block'"><li>DOUBLE SHIFT</li></a>
+		<a onClick="document.getElementById('tcs').style.display='block'"><li>SPECIAL FORM</li></a>
 		<a onClick="document.getElementById('hd').style.display='block'"><li>HALF DAY(Log Out)</li></a>
 	</ul>
 	</ul>
@@ -64,9 +65,8 @@ include("../codes/out-codes.php")
         <div class="container">
       <label><b>Employee ID : </b></label>
       <input type="text" placeholder="ID no." autoFocus name="empid" id="empid" required>
-            </br><label><b>No of hours : </b></label>
-
-     <input type="text" pattern="[0-9]{1,2}" name="noh" required placeholder="No. of Hours">
+            </br><label><br><b>Extra worked hours: </label>
+     <input type="text" pattern="[0-9]{1,2}" name="noh" required placeholder="Extra worked hours. . .">
       <textarea required class="text" name="reason" placeholder="REASON HERE . . ."></textarea>
             <label><b>Supervisor: </b></label>
 <?php 
@@ -131,7 +131,7 @@ $count = mysql_num_rows($result1);
       <label><b>Employee ID : </b></label>
       <input type="text" placeholder="ID no." autoFocus name="empid" id="empid" required>
    
-      <input type="text"  placeholder="Number of Hours" name="noh" pattern="[0-9]{1,2}" required=" ">
+      <input type="text"  placeholder="Extra worked hours. . ." name="noh" pattern="[0-9]{1,2}" required=" ">
       <textarea required class="text" name="reason" placeholder="REASON HERE . . ."></textarea>
 <?php 
 	include("../codes/connection.php");
@@ -182,6 +182,38 @@ $count = mysql_num_rows($result1);
 
 	</div>
 
+
+
+<div id=tcs  class="modal">
+  <span onClick="document.getElementById('rd').style.display='none'"  class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+	<form class="modal-content animate" action="" method="post">
+    <h2 align="center">SPECIAL SHIFT FORM</h2>
+        <div class="container">
+      <input type="text" placeholder="ID no." autoFocus name="empid" id="empid" required>
+      
+     <textarea required class="text" name="reason" placeholder="REASON HERE . . ."></textarea>
+<?php 
+	include("../codes/connection.php");
+	$query1="SELECT * From information where position='SUPERVISOR' || position='MANAGER' || position='TEAM LEADER' || position='ACCOUNT MANAGER' || position='OPERATION MANAGER'";
+	$result1 = mysql_query($query1);
+$count = mysql_num_rows($result1);
+	echo "<select name='sup' class='drp' required>";
+	while($row=mysql_fetch_array($result1)){
+	echo "<option value = '".$row['fname']." ".$row['mname']." ".$row['lname']."'>".$row['fname']." ".$row['mname']." ".$row['lname']."</option>";}
+	echo "</select>";
+	?>
+      <button id="tcs" class="btn" name="tcs" type="submit">LOG-IN</button>
+
+      <button id="tcs" class="btn" name="tcs1" type="submit">LOG-OUT</button>     	<button  onClick="document.getElementById('tcs').style.display='none'" class="clos"  >CLOSE</button>
+	  </div>
+ 	 </form>
+	</div>
+  <!--- END OF MODAL-->
+
+	</div>
+	<!---end-->
 <div id="ds"  class="modal">
   <span onClick="document.getElementById('ds').style.display='none'"  class="close" title="Close Modal">&times;</span>
 
