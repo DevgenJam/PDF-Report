@@ -1,0 +1,107 @@
+body{
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-top:20px; 
+	color:white;
+	font-family: arial;
+	background-image: url(../IMG/sky.png);
+	background-color:white;
+}
+#content{
+	opacity: 0.9;
+	width: 100%;
+	height: 600px;
+	padding:10px;
+	background-color:black;
+}
+#left{
+
+	height: 100px;
+	width:200px;
+	
+}
+
+#right img{
+	border-radius: 50px;
+	height: 100px;
+	width: 100px;
+	margin-left: 180px;
+	margin-right: 180px;
+}
+#right{
+	width: 50%;
+	height: 100%;
+	float: right;
+	border-left: 1px solid #fff;
+}
+#left img{
+	width: 100%;
+	font-size: 12px;
+	letter-spacing: .2em;
+	height: 100%;
+	float: left;
+}
+
+#bottom{
+	margin-top: 50px;
+	border-top: 1px solid #363636;
+	height: 250px;
+	width: 450px;
+}
+#bottom p{
+	text-align: justify;
+	position: relative;
+	font-size: 11px;
+	padding: 5px;
+	color: green;
+	font-weight: bold;
+
+}
+#bottom label{
+	text-align: justify;
+	position: relative;
+	font-size:14px;
+	color: grey;
+
+}
+
+#bottom ul{
+	clear: none;
+	position: justify;
+	left: 100px;
+	top: 10px;
+	color: #fff;
+
+}
+#bottom ul a li{
+	font-size: 14px;
+	padding: 15px;
+	color: #fff;
+}
+#bottom li:hover{
+	padding:auto;
+	border:1px solid; 	
+}
+/**textboxes**/
+input[type="text"]{
+	margin-top: 10px;
+	margin-left:10px;
+	width: 80%;
+	padding: 7px;
+	height: 20px; 
+}
+
+.link {/*ang link*/
+	margin-top: 10px;
+	border-radius: 5px;
+	margin-left: 10px;
+    background: green;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    color: #ccc;
+}
+.link:hover {
+    background: white;
+    color: black;
+}

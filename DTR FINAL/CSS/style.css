@@ -1,0 +1,141 @@
+body{
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-top:20px; 
+	color:white;
+	font-family: arial;
+	background-image: url(../IMG/sky.png);
+	background-color:white;
+}
+#content{
+	opacity: 0.9;
+	width: 95%;
+	height: 600px;
+	padding:10px;
+background-color:black;
+}
+#left{
+	width: 47%;
+	font-size: 12px;
+	letter-spacing: .2em;
+	height: 100%;
+	float: left;
+}
+.clock{
+	height: 150px;
+	width: 150px;
+}
+#right{
+	width: 50%;
+	height: 100%;
+	float: right;
+	border-left: 1px solid #fff;
+}
+
+#right img{
+	width: 50%;
+	height: 20%;
+	float:center;
+	border-left: 1px solid #fff;
+}
+#bottom{
+	margin-top: 15px;
+	border-top: 1px solid #363636;
+	height: 250px;
+	width: 400px;
+}
+#bottom p{
+	text-align: justify;
+	position: relative;
+	font-size: 11px;
+	padding: 15px;
+	color: green;
+	font-weight: bold;
+
+}
+#bottom label{
+	text-align: justify;
+	position: relative;
+	font-size:14px;
+	color: grey;
+
+}
+
+#bottom ul{
+	clear: none;
+	position: justify;
+	left: 100px;
+	top: 10px;
+	color: #fff;
+
+}
+#bottom ul a li{
+	font-size: 14px;
+	padding: 15px;
+	color: #fff;
+}
+#bottom li:hover{
+	padding:auto;
+	border:1px solid; 	
+}
+/**textboxes**/
+input[type="text"]{
+	margin-top: 10px;
+	margin-left:10px;
+	width: 90%;
+	padding: 7px;
+	height: auto; 
+}
+.text{
+
+	margin-top: 10px;
+	margin-left:10px;
+	width: 90%;
+	padding: 7px;
+	height: 100px; 
+}
+.link {/*ang link*/
+	margin-top: 10px;
+	border-radius: 5px;
+	margin-left: 10px;
+    background: green;
+    border: none;
+    padding:9px;
+    cursor: pointer;
+    color: #ccc;
+}
+.link:hover {
+    background: white;
+    color: black;
+}
+
+.btn {/*ang link*/
+	width: 30%;
+	margin-top: 10px;
+	border-radius: 5px;
+	margin-left: 10px;
+    background: green;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    color: #ccc;
+}
+.btn:hover {
+    background: gray;
+    color: white;
+}
+.clos {/*ang link*/
+	width: 30%;
+	margin-top: 10px;
+	border-radius: 5px;
+	margin-left: 10px;
+    background: red;
+    border: none;
+    padding:10px;
+    cursor: pointer;
+    color: white;
+}
+.clos:hover {
+    background:gray;
+    color: white;
+}

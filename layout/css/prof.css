@@ -1,0 +1,49 @@
+body{
+	font-family: arial;
+	padding: 10px;
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-top:20px; 
+	background-color: white;
+
+}
+#container{
+
+	width: 85%;
+	height: 600px;
+	padding:10px;
+}
+h2{
+	font-weight: bold;
+	font-size: 18px;
+	color: #363636;
+}
+
+
+
+#left{
+	width: 50%;
+	font-size: 12px;
+	letter-spacing: .2em;
+	height: 100%;
+	float: left;
+}
+
+#right{
+	font-size: 12px;
+padding: 10px;
+	width: 40%;
+	height: 100%;
+	float: right;
+	border-left: 1px solid gray;
+}
+.link {/*ang link*/
+    background: #555;
+    border: none;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    color: #ccc;
+}
+.link:hover {
+    background: #666;
+}

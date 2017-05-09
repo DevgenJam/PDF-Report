@@ -1,0 +1,11 @@
+#container
+{
+	position: relative;
+	width: 50%;
+	top: 90px;
+	height: 580px;
+	background-color: #363636;	
+	overflow: hidden;
+	margin: auto;
+	border:0px;
+}
